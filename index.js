@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dns = require('dns');
-const mySecret = process.env['MONGO_URI'];
+const mySecret = process.env.MONGO_URI;
 mongoose.connect( mySecret, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const urlSchema = new mongoose.Schema({
