@@ -48,7 +48,6 @@ app.post('/api/shorturl', (req, res) => {
     Url.findOne({original_url: valid.href}, (err, data) => {
       if (! data) {
         let random = Math.floor(Math.random() * 10000);
-    res.json({original_url: valid.href, short_url: random});
         let dbupload = new Url({original_url: valid.href, short_url: random});
         dbupload.save((err, data) => {
           if (err) {
