@@ -43,8 +43,9 @@ app.post('/api/shorturl', (req, res) => {
     let valid = new URL(url);
     dns.lookup(valid.hostname, (err, address, family) => {
       if (! address) {
-        res.json({error: 'invalid url'})
-      } else
+        return res.json({error: 'invalid url'})
+      } else {
+
     Url.findOne({original_url: valid.href}, (err, data) => {
       if (! data) {
         let random = Math.floor(Math.random() * 10000);
@@ -52,12 +53,15 @@ app.post('/api/shorturl', (req, res) => {
         dbupload.save((err, data) => {
           if (err) {
             console.log(err)
+          } else {
+            res.json(data)
           }
         })
       } else {
         return res.json({original_url: data.original_url, short_url: data.short_url});
       }
     })
+  }
    })   
   } catch(e){
     res.json({error: "invalid url"})
@@ -80,3 +84,4 @@ app.get("/api/shorturl/:short_url", (req, res) => {
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
+
