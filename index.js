@@ -43,9 +43,8 @@ app.post('/api/shorturl', (req, res) => {
     let valid = new URL(url);
     dns.lookup(valid.hostname, (err, address, family) => {
       if (! address) {
-        return res.json({error: 'invalid url'})
+        res.json({error: 'invalid url'})
       } else
-      
     Url.findOne({original_url: valid.href}, (err, data) => {
       if (! data) {
         let random = Math.floor(Math.random() * 10000);
