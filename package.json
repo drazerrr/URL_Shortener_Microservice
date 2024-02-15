@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD
-  "name": "shorturl",
-  "version": "0.0.3",
-  "description": "URL Shortener",
-=======
-  "name": "url_shortener",
+  "name": "url-shortener",
   "version": "1.0.0",
-  "description": "URL SHORTENER",
->>>>>>> 39167d16405aa00bda6c1256c1d86acd6cc52a23
+  "description": "url shortener microservice",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -15,13 +9,13 @@
   },
   "author": "Anurag Dwivedi",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.2",
+    "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "mongoose": "^8.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

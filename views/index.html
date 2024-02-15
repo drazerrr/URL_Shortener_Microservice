@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles.css" type="text/css">
+    <title>URL SHORTENER MICROSERVICE</title>
+</head>
+<body>
+    <header>
+        <h4>ENTER THE URL</h4>
+        <p>Example: <span>http://www.google.com</span></p>
+    </header>
+    <section>
+        <form action="/api/shorturl" method="POST">
+            <fieldset>
+                <legend>URL SHORTENER</legend>
+                <label for="url">URL:</label>
+                <input type="text" id="url" name="url" placeholder="http://www.google.com">
+                <input type="submit" id="submit" value="submit">
+            </fieldset>
+            
+
+        </form>
+    </section>
+
+    <div>go to short_url: /api/short_url/url_id</div>
+    <p>Example: /api/short_url/1</p>
+    
+</body>
+</html>
